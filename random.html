@@ -1,0 +1,33 @@
+<head>
+  <title>招财猫 Powerball</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body ng-app="random">
+  <nav class="blue lighten-1" role="navigation">
+    <div class="nav-wrapper valign-wrapper container">
+    <img class="circle responsive-img" src="zcm2-sm.jpg" /><h4 style="margin-left:10px">招财猫 Powerball</h4>
+    </div>
+  </nav>
+  <div class="container" ng-controller="RandomCtrl">
+    <br>
+    <div class="row center-align" ng-repeat="number in numbers">
+      <div class="col s2" ng-repeat="wt in number.white track by $index">
+        <button class="btn-floating waves-effect waves-light blue">{{wt}}</button>
+      </div>
+      <div class="col s2">
+        <button class="btn-floating waves-effect red">{{number.red}}</button>
+      </div>
+    </div>
+    <div class="row center-align" ng-click="generateNumbers()">
+      <a class="btn btn-large blue lighten-1">! MEOW !</a>
+    </div>
+  </div>
+  <div id="bottom" class="bottom"></div>
+</body>
